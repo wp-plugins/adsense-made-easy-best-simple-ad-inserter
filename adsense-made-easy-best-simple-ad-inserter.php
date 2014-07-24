@@ -24,8 +24,10 @@ if (!class_exists("AdsenseMadeEasy")) {
 
 		  if (((is_single() && get_option('adsense_made_easy_displayposts')=='yes') || (is_singular() && is_page() && get_option('adsense_made_easy_displaypages')=='yes') || is_category() || is_archive()) && $wp_query->posts[0]->ID == $post->ID) {
 			$original = $content;
-			if (get_option('adsense_made_easy_topadtype')=='square') {
+			if (get_option('adsense_made_easy_topadalignment')=='left') {
 				$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: left;\">\n";
+			} else if (get_option('adsense_made_easy_topadalignment')=='right') {
+				$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: right;\">\n";
 			} else {
 				$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; margin-left:auto; margin-right:auto; \">\n";
 			}
@@ -219,6 +221,7 @@ add_option("adsense_made_easy_topadtype", 'banner', '', 'yes');
 add_option("adsense_made_easy_bottomadtype", 'banner', '', 'yes');
 add_option("adsense_made_easy_displayposts", 'yes', '', 'yes');
 add_option("adsense_made_easy_displaypages", 'yes', '', 'yes');
+add_option("adsense_made_easy_topadalignment", 'centered', '', 'yes');
 }
 
 function adsense_made_easy_remove() {
@@ -265,7 +268,20 @@ function adsense_made_easy_page() {
 <option value="banner" <?php if (get_option('adsense_made_easy_topadtype')=='banner') echo ' selected ' ?> >Banner (horizontal)</option>
 <option value="rectangle" <?php if (get_option('adsense_made_easy_topadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle</option>
 <option value="none" <?php if (get_option('adsense_made_easy_topadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
-</select> Do you want the top ad to be a left alligned square or a centered horizontal banner or a big rectangle?
+</select> Do you want the top ad to be a square or a centered horizontal banner or a big rectangle?
+</td>
+</tr>
+</table>
+
+<table width="850">
+<tr valign="top">
+<th width="250" scope="row">Top ad alignment </th>
+<td width="600">
+<select name="adsense_made_easy_topadalignment" id="adsense_made_easy_topadalignment">
+<option value="left" <?php if (get_option('adsense_made_easy_topadalignment')=='left') echo ' selected ' ?> >Left</option>
+<option value="right" <?php if (get_option('adsense_made_easy_topadalignment')=='right') echo ' selected ' ?> >Right</option>
+<option value="centered" <?php if (get_option('adsense_made_easy_topadalignment')=='centered') echo ' selected ' ?> >Centered</option>
+</select> Do you want the top ad to be a aligned left, right or centered?
 </td>
 </tr>
 </table>
@@ -347,7 +363,7 @@ function adsense_made_easy_page() {
 
 
 <input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="adsense_made_easy_publisherid, adsense_made_easy_bordercolor, adsense_made_easy_titlecolor, adsense_made_easy_backgroundcolor, adsense_made_easy_textcolor, adsense_made_easy_urlcolor, adsense_made_easy_topadtype, adsense_made_easy_bottomadtype, adsense_made_easy_displayposts, adsense_made_easy_displaypages" />
+<input type="hidden" name="page_options" value="adsense_made_easy_publisherid, adsense_made_easy_bordercolor, adsense_made_easy_titlecolor, adsense_made_easy_backgroundcolor, adsense_made_easy_textcolor, adsense_made_easy_urlcolor, adsense_made_easy_topadtype, adsense_made_easy_bottomadtype, adsense_made_easy_displayposts, adsense_made_easy_displaypages, adsense_made_easy_topadalignment" />
 
 <p>
 <input type="submit" value="<?php _e('Save Changes') ?>" />
