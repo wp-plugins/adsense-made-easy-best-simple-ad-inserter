@@ -1,7 +1,7 @@
 === Adsense Made Easy - Best Simple Ad Inserter ===
 Contributors: seo101
 Donate link: 
-Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue
+Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue, easy adsense, adsense easy, simple adsense inserter
 Requires at least: 3.1
 Tested up to: 3.9.1
 Stable tag: 1.00
@@ -15,6 +15,8 @@ The most simple way to add Google Adsense to your website. Easily insert ads int
 Adsense Made Easy is designed to keep everything as simple as possible. In fact you only need to install the plugin, set your adsense publisher ID in the settings page, and you're done. The ads will automatically appear on your posts and pages. You can even drag a widget into the sidebar if you'd like to have an ad there as well. 
 
 If you'd like to change where the ads appear you can specify the type of ad and the location of the ad by simple parameters in the settings page. You can even change the appearance by changing background and border colors to match the look and feel of your website.
+
+Features: Google Adsense, Ads, Easy Adsense, Simple Adsense, Simple Adsense Inserter
 
 == Installation ==
 
