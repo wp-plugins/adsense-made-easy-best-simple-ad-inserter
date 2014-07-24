@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI:
-Version: 1.00
+Version: 1.01
 Author: <a href="http://www.seo101.net">Seo101</a>
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -29,7 +29,7 @@ if (!class_exists("AdsenseMadeEasy")) {
 			} else if (get_option('adsense_made_easy_topadalignment')=='right') {
 				$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: right;\">\n";
 			} else {
-				$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; margin-left:auto; margin-right:auto; \">\n";
+				$content = "<div align=\"center\" style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; margin-left:auto; margin-right:auto; \">\n";
 			}
 			if (get_option('adsense_made_easy_topadtype')!='none') {
 				$content .= "<script type=\"text/javascript\"><!--\n";
@@ -268,7 +268,7 @@ function adsense_made_easy_page() {
 <option value="banner" <?php if (get_option('adsense_made_easy_topadtype')=='banner') echo ' selected ' ?> >Banner (horizontal)</option>
 <option value="rectangle" <?php if (get_option('adsense_made_easy_topadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle</option>
 <option value="none" <?php if (get_option('adsense_made_easy_topadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
-</select> Do you want the top ad to be a square or a centered horizontal banner or a big rectangle?
+</select> Do you want the top ad to be a square, horizontal banner or a big rectangle?
 </td>
 </tr>
 </table>

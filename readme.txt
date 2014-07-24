@@ -4,7 +4,7 @@ Donate link:
 Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue, easy adsense, adsense easy, simple adsense inserter
 Requires at least: 3.1
 Tested up to: 3.9.1
-Stable tag: 1.00
+Stable tag: 1.01
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,7 @@ None yet
 4. 
 
 == Changelog ==
+1.01 <BR>Added alignment option for top ad<BR>
 1.00 <BR>First Release<BR>
 
 
