@@ -1,5 +1,5 @@
 === Adsense Made Easy - Best Simple Ad Inserter ===
-Contributors: DeWandelaar
+Contributors: seo101
 Donate link: 
 Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue
 Requires at least: 3.1

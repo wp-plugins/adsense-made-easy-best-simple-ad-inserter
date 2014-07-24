@@ -258,35 +258,35 @@ function adsense_made_easy_page() {
 
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Top add type </th>
+<th width="250" scope="row">Top ad type </th>
 <td width="600">
 <select name="adsense_made_easy_topadtype" id="adsense_made_easy_topadtype">
 <option value="square" <?php if (get_option('adsense_made_easy_topadtype')=='square') echo ' selected ' ?> >Square</option>
 <option value="banner" <?php if (get_option('adsense_made_easy_topadtype')=='banner') echo ' selected ' ?> >Banner (horizontal)</option>
 <option value="rectangle" <?php if (get_option('adsense_made_easy_topadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle</option>
 <option value="none" <?php if (get_option('adsense_made_easy_topadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
-</select> Do you want the top add to be a left alligned square or a centered horizontal banner or a big rectangle?
+</select> Do you want the top ad to be a left alligned square or a centered horizontal banner or a big rectangle?
 </td>
 </tr>
 </table>
 
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Bottom add type </th>
+<th width="250" scope="row">Bottom ad type </th>
 <td width="600">
 <select name="adsense_made_easy_bottomadtype" id="adsense_made_easy_bottomadtype">
 <option value="banner" <?php if (get_option('adsense_made_easy_bottomadtype')=='banner') echo ' selected ' ?> >Banner (horizontal)</option>
 <option value="square" <?php if (get_option('adsense_made_easy_bottomadtype')=='square') echo ' selected ' ?> >Square (little less big then Rectangle)</option>
 <option value="rectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle</option>
 <option value="none" <?php if (get_option('adsense_made_easy_bottomadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
-</select> Do you want the bottom add to be a centered horizontal banner or a square or a big rectangle?
+</select> Do you want the bottom ad to be a centered horizontal banner or a square or a big rectangle?
 </td>
 </tr>
 </table>
 
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Display adds on posts? </th>
+<th width="250" scope="row">Display ads on posts? </th>
 <td width="600">
 <select name="adsense_made_easy_displayposts" id="adsense_made_easy_displayposts">
 <option value="yes" <?php if (get_option('adsense_made_easy_displayposts')=='yes') echo ' selected ' ?> >yes</option>
@@ -297,7 +297,7 @@ function adsense_made_easy_page() {
 </table>
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Display adds on pages? </th>
+<th width="250" scope="row">Display ads on pages? </th>
 <td width="600">
 <select name="adsense_made_easy_displaypages" id="adsense_made_easy_displaypages">
 <option value="yes" <?php if (get_option('adsense_made_easy_displaypages')=='yes') echo ' selected ' ?> >yes</option>
@@ -311,35 +311,35 @@ function adsense_made_easy_page() {
 <BR><BR>
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Bordercolor of the adds</th>
+<th width="250" scope="row">Bordercolor of the ads</th>
 <td width="600">
 <input class="color" name="adsense_made_easy_bordercolor" type="text" id="adsense_made_easy_bordercolor" value="<?php echo get_option('adsense_made_easy_bordercolor'); ?>" /></td>
 </tr>
 </table>
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Titlecolor (Link) of the adds</th>
+<th width="250" scope="row">Titlecolor (Link) of the ads</th>
 <td width="600">
 <input class="color" name="adsense_made_easy_titlecolor" type="text" id="adsense_made_easy_titlecolor" value="<?php echo get_option('adsense_made_easy_titlecolor'); ?>" /></td>
 </tr>
 </table>
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Backgroundcolor of the adds</th>
+<th width="250" scope="row">Backgroundcolor of the ads</th>
 <td width="600">
 <input class="color" name="adsense_made_easy_backgroundcolor" type="text" id="adsense_made_easy_backgroundcolor" value="<?php echo get_option('adsense_made_easy_backgroundcolor'); ?>" /></td>
 </tr>
 </table>
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">Textcolor of the adds</th>
+<th width="250" scope="row">Textcolor of the ads</th>
 <td width="600">
 <input class="color" name="adsense_made_easy_textcolor" type="text" id="adsense_made_easy_textcolor" value="<?php echo get_option('adsense_made_easy_textcolor'); ?>" /></td>
 </tr>
 </table>
 <table width="850">
 <tr valign="top">
-<th width="250" scope="row">URLcolor of the adds </th>
+<th width="250" scope="row">URLcolor of the ads </th>
 <td width="600">
 <input class="color" name="adsense_made_easy_urlcolor" type="text" id="adsense_made_easy_urlcolor" value="<?php echo get_option('adsense_made_easy_urlcolor'); ?>" /></td>
 </tr>
