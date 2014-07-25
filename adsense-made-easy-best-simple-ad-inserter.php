@@ -145,11 +145,11 @@ class AdsenseMadeEasyWidget extends WP_Widget
   <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
 <p>Type of Ad:<BR>
 <select name="<?php echo $this->get_field_name('adtype'); ?>" id="<?php echo $this->get_field_id('adtype'); ?>">
-<option value="square" <?php if (attribute_escape($adtype)=='square') echo ' selected ' ?> >Square (250x250)</option>
-<option value="mediumrectangle" <?php if (attribute_escape($adtype)=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300x250)</option>
-<option value="bigrectangle" <?php if (attribute_escape($adtype)=='bigrectangle') echo ' selected ' ?> >Big Rectangle (336x280)</option>
-<option value="skyscraper" <?php if (attribute_escape($adtype)=='skyscraper') echo ' selected ' ?> >Skyscraper (120x600)</option>
-<option value="bigskyscraper" <?php if (attribute_escape($adtype)=='bigskyscraper') echo ' selected ' ?> >Big Skyscraper (300x600)</option>
+<option value="square" <?php if (attribute_escape($adtype)=='square') echo ' selected ' ?> >Square (250*250)</option>
+<option value="mediumrectangle" <?php if (attribute_escape($adtype)=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300*250)</option>
+<option value="bigrectangle" <?php if (attribute_escape($adtype)=='bigrectangle') echo ' selected ' ?> >Big Rectangle (336*280)</option>
+<option value="skyscraper" <?php if (attribute_escape($adtype)=='skyscraper') echo ' selected ' ?> >Skyscraper (120*600)</option>
+<option value="bigskyscraper" <?php if (attribute_escape($adtype)=='bigskyscraper') echo ' selected ' ?> >Big Skyscraper (300*600)</option>
 </select>
 </p>
 <?php
