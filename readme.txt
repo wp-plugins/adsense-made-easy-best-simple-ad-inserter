@@ -16,7 +16,7 @@ Adsense Made Easy is designed to keep everything as simple as possible. In fact 
 
 If you'd like to change where the ads appear you can specify the type of ad and the location of the ad by simple parameters in the settings page. You can even change the appearance by changing background and border colors to match the look and feel of your website.
 
-Features: Google Adsense, Ads, Easy Adsense, Simple Adsense, Simple Adsense Inserter
+Features: Google Adsense, Adsense Ads, Easy Adsense, Adsense Easy, Adsense Made Easy, Simple Adsense, Simple Adsense Inserter, Inserting Ads, Google Adsense Plugin, Adsense Plugin, Plugin for Adsense, Adsense Now, Now Adsense, Google Adsense Now, Simple Adsense Insertion, Inserting code, Adsense Widget, Widget for Google Adsense.
 
 == Installation ==
 
