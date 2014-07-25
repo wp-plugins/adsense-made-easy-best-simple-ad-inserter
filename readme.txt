@@ -85,3 +85,5 @@ For site-targeted advertisements, the advertiser chooses the page(s) on which to
 For referrals, Google adds money to the advertiser's account when visitors either download the referred software or subscribe to the referred service.[19] The referral program was retired in August 2008.[20]
 Search advertisements are added to the list of results after the visitor performs a search.
 Because the JavaScript is sent to the Web browser when the page is requested, it is possible for other website owners to copy the JavaScript code into their own webpages. To protect against this type of fraud, AdSense customers can specify the pages on which advertisements should be shown. AdSense then ignores clicks from pages other than those specified.
+
+Complete article at wikipedia: http://en.wikipedia.org/wiki/AdSense
