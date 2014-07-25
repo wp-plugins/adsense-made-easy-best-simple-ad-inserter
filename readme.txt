@@ -47,7 +47,6 @@ None yet
 
 == Arbitrary section 1 ==
 
-== Other Notes ==
 This plugin will make it very easy for you to utilize Google Adsense for generating revenue with your website. It will show ads in the locations you select and display them to your readers. You need to fill in your Google Adsense Publisher ID which you can find in your account information in your Google Adsense dashboard (at http://adsense.google.com).
 
 Google Adsense is one of the most popular ways to make money online and to quickly make revenue with your website. This plugin enables you to quickly set this up for your Wordpress enabled blog. 
