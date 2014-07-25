@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI:
-Version: 1.01
+Version: 1.10
 Author: <a href="http://www.seo101.net">Seo101</a>
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -31,15 +31,20 @@ if (!class_exists("AdsenseMadeEasy")) {
 			} else {
 				$content = "<div align=\"center\" style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; margin-left:auto; margin-right:auto; \">\n";
 			}
+
 			if (get_option('adsense_made_easy_topadtype')!='none') {
 				$content .= "<script type=\"text/javascript\"><!--\n";
 				$content .= "google_ad_client = \"";
 				$content .= get_option('adsense_made_easy_publisherid');
 				$content .= "\";\n";
-				if (get_option('adsense_made_easy_topadtype')=='square') {
+
+				if (get_option('adsense_made_easy_topadtype') =='square') {
 				  $content .= "google_ad_width = 250;\n";
 				  $content .= "google_ad_height = 250;\n";
-				} elseif (get_option('adsense_made_easy_topadtype')=='rectangle') {
+				} elseif (get_option('adsense_made_easy_topadtype') =='mediumrectangle') {
+				  $content .= "google_ad_width = 300;\n";
+				  $content .= "google_ad_height = 250;\n";
+				} elseif (get_option('adsense_made_easy_topadtype') =='rectangle') {
 				  $content .= "google_ad_width = 336;\n";
 				  $content .= "google_ad_height = 280;\n";
 				} else {
@@ -76,12 +81,15 @@ if (!class_exists("AdsenseMadeEasy")) {
 				$content .= "google_ad_client = \"";
 				$content .= get_option('adsense_made_easy_publisherid');
 				$content .= "\";\n";
-				if (get_option('adsense_made_easy_bottomadtype')=='rectangle') {
-				  $content .= "google_ad_width = 336;\n";
-				  $content .= "google_ad_height = 280;\n";
-				} elseif (get_option('adsense_made_easy_bottomadtype')=='square') {
+				if (get_option('adsense_made_easy_bottomadtype') =='square') {
 				  $content .= "google_ad_width = 250;\n";
 				  $content .= "google_ad_height = 250;\n";
+				} elseif (get_option('adsense_made_easy_bottomadtype') =='mediumrectangle') {
+				  $content .= "google_ad_width = 300;\n";
+				  $content .= "google_ad_height = 250;\n";
+				} elseif (get_option('adsense_made_easy_bottomadtype') =='rectangle') {
+				  $content .= "google_ad_width = 336;\n";
+				  $content .= "google_ad_height = 280;\n";
 				} else {
 				  $content .= "google_ad_width = 468;\n";
 				  $content .= "google_ad_height = 60;\n";
@@ -132,8 +140,18 @@ class AdsenseMadeEasyWidget extends WP_Widget
   {
     $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
     $title = $instance['title'];
+    $adtype = $instance['adtype'];
 ?>
   <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
+<p>Type of Ad:<BR>
+<select name="<?php echo $this->get_field_name('adtype'); ?>" id="<?php echo $this->get_field_id('adtype'); ?>">
+<option value="square" <?php if (attribute_escape($adtype)=='square') echo ' selected ' ?> >Square (250x250)</option>
+<option value="mediumrectangle" <?php if (attribute_escape($adtype)=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300x250)</option>
+<option value="bigrectangle" <?php if (attribute_escape($adtype)=='bigrectangle') echo ' selected ' ?> >Big Rectangle (336x280)</option>
+<option value="skyscraper" <?php if (attribute_escape($adtype)=='skyscraper') echo ' selected ' ?> >Skyscraper (120x600)</option>
+<option value="bigskyscraper" <?php if (attribute_escape($adtype)=='bigskyscraper') echo ' selected ' ?> >Big Skyscraper (300x600)</option>
+</select>
+</p>
 <?php
   }
 
@@ -141,6 +159,7 @@ class AdsenseMadeEasyWidget extends WP_Widget
   {
     $instance = $old_instance;
     $instance['title'] = $new_instance['title'];
+    $instance['adtype'] = $new_instance['adtype'];
     return $instance;
   }
 
@@ -150,18 +169,36 @@ class AdsenseMadeEasyWidget extends WP_Widget
 
     echo $before_widget;
     $title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);
+    $adtype = $instance['adtype'];
 
     if (!empty($title))
       echo $before_title . $title . $after_title;;
 
     // WIDGET CODE GOES IN HERE
-    echo "<script type=\"text/javascript\"> <!--\n";
+    echo "<center><script type=\"text/javascript\"> <!--\n";
     echo "google_ad_client = \"";
 	echo get_option('adsense_made_easy_publisherid');
     echo "\";\n";
     echo "/* GrootVierkantWit */\n";
-    echo "google_ad_width = 160;\n";
-    echo "google_ad_height = 600;\n";
+	if ($adtype =='square') {
+	  echo "google_ad_width = 250;\n";
+	  echo "google_ad_height = 250;\n";
+	} elseif ($adtype =='mediumrectangle') {
+	  echo "google_ad_width = 300;\n";
+	  echo "google_ad_height = 250;\n";
+	} elseif ($adtype =='bigrectangle') {
+	  echo "google_ad_width = 336;\n";
+	  echo "google_ad_height = 280;\n";
+	} elseif ($adtype =='skyscraper') {
+	  echo "google_ad_width = 120;\n";
+	  echo "google_ad_height = 600;\n";
+	} elseif ($adtype =='bigskyscraper') {
+	  echo "google_ad_width = 300;\n";
+	  echo "google_ad_height = 600;\n";
+	} else {
+	  echo "google_ad_width = 250;\n";
+	  echo "google_ad_height = 250;\n";
+	}
     echo "google_color_border = \"";
     echo get_option('adsense_made_easy_bordercolor');
     echo "\";\n";
@@ -181,7 +218,7 @@ class AdsenseMadeEasyWidget extends WP_Widget
     echo "</script>\n";
     echo "<script type=\"text/javascript\"\n";
     echo "src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\n";
-    echo "</script> \n";
+    echo "</script></center> \n";
 
     echo $after_widget;
   }
@@ -264,11 +301,12 @@ function adsense_made_easy_page() {
 <th width="250" scope="row">Top ad type </th>
 <td width="600">
 <select name="adsense_made_easy_topadtype" id="adsense_made_easy_topadtype">
-<option value="square" <?php if (get_option('adsense_made_easy_topadtype')=='square') echo ' selected ' ?> >Square</option>
-<option value="banner" <?php if (get_option('adsense_made_easy_topadtype')=='banner') echo ' selected ' ?> >Banner (horizontal)</option>
-<option value="rectangle" <?php if (get_option('adsense_made_easy_topadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle</option>
+<option value="square" <?php if (get_option('adsense_made_easy_topadtype')=='square') echo ' selected ' ?> >Square (250*250)</option>
+<option value="mediumrectangle" <?php if (get_option('adsense_made_easy_topadtype')=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300*250)</option>
+<option value="rectangle" <?php if (get_option('adsense_made_easy_topadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle (336*280)</option>
+<option value="banner" <?php if (get_option('adsense_made_easy_topadtype')=='banner') echo ' selected ' ?> >Banner (468*60)</option>
 <option value="none" <?php if (get_option('adsense_made_easy_topadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
-</select> Do you want the top ad to be a square, horizontal banner or a big rectangle?
+</select> The type of ad you want on top of your posts/pages?
 </td>
 </tr>
 </table>
@@ -291,11 +329,12 @@ function adsense_made_easy_page() {
 <th width="250" scope="row">Bottom ad type </th>
 <td width="600">
 <select name="adsense_made_easy_bottomadtype" id="adsense_made_easy_bottomadtype">
-<option value="banner" <?php if (get_option('adsense_made_easy_bottomadtype')=='banner') echo ' selected ' ?> >Banner (horizontal)</option>
-<option value="square" <?php if (get_option('adsense_made_easy_bottomadtype')=='square') echo ' selected ' ?> >Square (little less big then Rectangle)</option>
-<option value="rectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle</option>
+<option value="square" <?php if (get_option('adsense_made_easy_bottomadtype')=='square') echo ' selected ' ?> >Square (250*250)</option>
+<option value="mediumrectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300*250)</option>
+<option value="rectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle (336*280)</option>
+<option value="banner" <?php if (get_option('adsense_made_easy_bottomadtype')=='banner') echo ' selected ' ?> >Banner (468*60)</option>
 <option value="none" <?php if (get_option('adsense_made_easy_bottomadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
-</select> Do you want the bottom ad to be a centered horizontal banner or a square or a big rectangle?
+</select> The type of ad you want on the bottom of your posts/pages?
 </td>
 </tr>
 </table>
