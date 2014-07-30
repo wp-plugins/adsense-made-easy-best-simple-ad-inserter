@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI:
-Version: 1.10
+Version: 1.20
 Author: <a href="http://www.seo101.net">Seo101</a>
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -38,18 +38,44 @@ if (!class_exists("AdsenseMadeEasy")) {
 				$content .= get_option('adsense_made_easy_publisherid');
 				$content .= "\";\n";
 
-				if (get_option('adsense_made_easy_topadtype') =='square') {
+				if (get_option('adsense_made_easy_topadtype') =='smallsquare') {
+				  $content .= "google_ad_width = 200;\n";
+				  $content .= "google_ad_height = 200;\n";
+				} elseif (get_option('adsense_made_easy_topadtype') =='square') {
 				  $content .= "google_ad_width = 250;\n";
 				  $content .= "google_ad_height = 250;\n";
-				} elseif (get_option('adsense_made_easy_topadtype') =='mediumrectangle') {
+				}  elseif (get_option('adsense_made_easy_topadtype') =='smallrectangle') {
+				  $content .= "google_ad_width = 180;\n";
+				  $content .= "google_ad_height = 150;\n";
+				}  elseif (get_option('adsense_made_easy_topadtype') =='mediumrectangle') {
 				  $content .= "google_ad_width = 300;\n";
 				  $content .= "google_ad_height = 250;\n";
-				} elseif (get_option('adsense_made_easy_topadtype') =='rectangle') {
+				}  elseif (get_option('adsense_made_easy_topadtype') =='rectangle') {
 				  $content .= "google_ad_width = 336;\n";
 				  $content .= "google_ad_height = 280;\n";
+				}  elseif (get_option('adsense_made_easy_topadtype') =='halfbanner') {
+				  $content .= "google_ad_width = 234;\n";
+				  $content .= "google_ad_height = 60;\n";
+				}  elseif (get_option('adsense_made_easy_topadtype') =='banner') {
+				  $content .= "google_ad_width = 468;\n";
+				  $content .= "google_ad_height = 60;\n";
+				}  elseif (get_option('adsense_made_easy_topadtype') =='leaderboard') {
+				  $content .= "google_ad_width = 728;\n";
+				  $content .= "google_ad_height = 90;\n";
+				}  elseif (get_option('adsense_made_easy_topadtype') =='largeleaderboard') {
+				  $content .= "google_ad_width = 970;\n";
+				  $content .= "google_ad_height = 90;\n";
 				} else {
 				  $content .= "google_ad_width = 468;\n";
 				  $content .= "google_ad_height = 60;\n";
+				}
+
+				if (get_option('adsense_made_easy_topadtextimage') =='text') {
+				  $content .= "google_ad_type = \"text\";\n";
+				} elseif (get_option('adsense_made_easy_topadtextimage') =='image') {
+				  $content .= "google_ad_type = \"image\";\n";
+				}  else {
+				  $content .= "google_ad_type = \"text_image\";\n";
 				}
 
 				$content .= "google_color_border = \"";
@@ -81,19 +107,46 @@ if (!class_exists("AdsenseMadeEasy")) {
 				$content .= "google_ad_client = \"";
 				$content .= get_option('adsense_made_easy_publisherid');
 				$content .= "\";\n";
-				if (get_option('adsense_made_easy_bottomadtype') =='square') {
+				if (get_option('adsense_made_easy_bottomadtype') =='smallsquare') {
+				  $content .= "google_ad_width = 200;\n";
+				  $content .= "google_ad_height = 200;\n";
+				} elseif (get_option('adsense_made_easy_bottomadtype') =='square') {
 				  $content .= "google_ad_width = 250;\n";
 				  $content .= "google_ad_height = 250;\n";
-				} elseif (get_option('adsense_made_easy_bottomadtype') =='mediumrectangle') {
+				}  elseif (get_option('adsense_made_easy_bottomadtype') =='smallrectangle') {
+				  $content .= "google_ad_width = 180;\n";
+				  $content .= "google_ad_height = 150;\n";
+				}  elseif (get_option('adsense_made_easy_bottomadtype') =='mediumrectangle') {
 				  $content .= "google_ad_width = 300;\n";
 				  $content .= "google_ad_height = 250;\n";
-				} elseif (get_option('adsense_made_easy_bottomadtype') =='rectangle') {
+				}  elseif (get_option('adsense_made_easy_bottomadtype') =='rectangle') {
 				  $content .= "google_ad_width = 336;\n";
 				  $content .= "google_ad_height = 280;\n";
+				}  elseif (get_option('adsense_made_easy_bottomadtype') =='halfbanner') {
+				  $content .= "google_ad_width = 234;\n";
+				  $content .= "google_ad_height = 60;\n";
+				}  elseif (get_option('adsense_made_easy_bottomadtype') =='banner') {
+				  $content .= "google_ad_width = 468;\n";
+				  $content .= "google_ad_height = 60;\n";
+				}  elseif (get_option('adsense_made_easy_bottomadtype') =='leaderboard') {
+				  $content .= "google_ad_width = 728;\n";
+				  $content .= "google_ad_height = 90;\n";
+				}  elseif (get_option('adsense_made_easy_bottomadtype') =='largeleaderboard') {
+				  $content .= "google_ad_width = 970;\n";
+				  $content .= "google_ad_height = 90;\n";
 				} else {
 				  $content .= "google_ad_width = 468;\n";
 				  $content .= "google_ad_height = 60;\n";
 				}
+
+				if (get_option('adsense_made_easy_bottomadtextimage') =='text') {
+				  $content .= "google_ad_type = \"text\";\n";
+				} elseif (get_option('adsense_made_easy_bottomadtextimage') =='image') {
+				  $content .= "google_ad_type = \"image\";\n";
+				}  else {
+				  $content .= "google_ad_type = \"text_image\";\n";
+				}
+
 				$content .= "google_color_border = \"";
 				$content .= get_option('adsense_made_easy_bordercolor');
 				$content .= "\";\n";
@@ -141,16 +194,32 @@ class AdsenseMadeEasyWidget extends WP_Widget
     $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
     $title = $instance['title'];
     $adtype = $instance['adtype'];
+    $adtextimage = $instance['adtextimage'];
 ?>
   <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
 <p>Type of Ad:<BR>
 <select name="<?php echo $this->get_field_name('adtype'); ?>" id="<?php echo $this->get_field_id('adtype'); ?>">
+<option value="smallsquare" <?php if (attribute_escape($adtype)=='smallsquare') echo ' selected ' ?> >Small Square (200*200)</option>
 <option value="square" <?php if (attribute_escape($adtype)=='square') echo ' selected ' ?> >Square (250*250)</option>
+<option value="smallrectangle" <?php if (attribute_escape($adtype)=='smallrectangle') echo ' selected ' ?> >Small Rectangle (180*150)</option>
 <option value="mediumrectangle" <?php if (attribute_escape($adtype)=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300*250)</option>
 <option value="bigrectangle" <?php if (attribute_escape($adtype)=='bigrectangle') echo ' selected ' ?> >Big Rectangle (336*280)</option>
 <option value="skyscraper" <?php if (attribute_escape($adtype)=='skyscraper') echo ' selected ' ?> >Skyscraper (120*600)</option>
+<option value="wideskyscraper" <?php if (attribute_escape($adtype)=='wideskyscraper') echo ' selected ' ?> >Wide Skyscraper (160*600)</option>
 <option value="bigskyscraper" <?php if (attribute_escape($adtype)=='bigskyscraper') echo ' selected ' ?> >Big Skyscraper (300*600)</option>
+<option value="portrait" <?php if (attribute_escape($adtype)=='portrait') echo ' selected ' ?> >Portrait (300*1050)</option>
+<option value="verticalbanner" <?php if (attribute_escape($adtype)=='verticalbanner') echo ' selected ' ?> >Portrait (120*240)</option>
 </select>
+</p>
+<p>
+Image or Text Ads?:<BR>
+<select name="<?php echo $this->get_field_name('adtextimage'); ?>" id="<?php echo $this->get_field_id('adtextimage'); ?>">
+<option value="text" <?php if (attribute_escape($adtextimage)=='text') echo ' selected ' ?> >Text</option>
+<option value="image" <?php if (attribute_escape($adtextimage)=='image') echo ' selected ' ?> >Image</option>
+<option value="both" <?php if (attribute_escape($adtextimage)!='image' && attribute_escape($adtextimage)!='text') echo ' selected ' ?> >Both</option>
+</select>
+
+
 </p>
 <?php
   }
@@ -160,6 +229,7 @@ class AdsenseMadeEasyWidget extends WP_Widget
     $instance = $old_instance;
     $instance['title'] = $new_instance['title'];
     $instance['adtype'] = $new_instance['adtype'];
+    $instance['adtextimage'] = $new_instance['adtextimage'];
     return $instance;
   }
 
@@ -170,6 +240,7 @@ class AdsenseMadeEasyWidget extends WP_Widget
     echo $before_widget;
     $title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);
     $adtype = $instance['adtype'];
+    $adtextimage = $instance['adtextimage'];
 
     if (!empty($title))
       echo $before_title . $title . $after_title;;
@@ -183,6 +254,21 @@ class AdsenseMadeEasyWidget extends WP_Widget
 	if ($adtype =='square') {
 	  echo "google_ad_width = 250;\n";
 	  echo "google_ad_height = 250;\n";
+	} elseif ($adtype =='smallsquare') {
+	  echo "google_ad_width = 200;\n";
+	  echo "google_ad_height = 200;\n";
+	} elseif ($adtype =='smallrectangle') {
+	  echo "google_ad_width = 180;\n";
+	  echo "google_ad_height = 150;\n";
+	} elseif ($adtype =='wideskyscraper') {
+	  echo "google_ad_width = 160;\n";
+	  echo "google_ad_height = 600;\n";
+	} elseif ($adtype =='portrait') {
+	  echo "google_ad_width = 300;\n";
+	  echo "google_ad_height = 1050;\n";
+	} elseif ($adtype =='verticalbanner') {
+	  echo "google_ad_width = 120;\n";
+	  echo "google_ad_height = 240;\n";
 	} elseif ($adtype =='mediumrectangle') {
 	  echo "google_ad_width = 300;\n";
 	  echo "google_ad_height = 250;\n";
@@ -198,6 +284,13 @@ class AdsenseMadeEasyWidget extends WP_Widget
 	} else {
 	  echo "google_ad_width = 250;\n";
 	  echo "google_ad_height = 250;\n";
+	}
+	if ($adtextimage =='text') {
+	  echo "google_ad_type = \"text\";\n";
+	} elseif ($adtextimage =='image') {
+	  echo "google_ad_type = \"image\";\n";
+	} else {
+	  echo "google_ad_type = \"text_image\";\n";
 	}
     echo "google_color_border = \"";
     echo get_option('adsense_made_easy_bordercolor');
@@ -255,7 +348,9 @@ add_option("adsense_made_easy_backgroundcolor", 'FFFFFF', '', 'yes');
 add_option("adsense_made_easy_textcolor", '000000', '', 'yes');
 add_option("adsense_made_easy_urlcolor", '008000', '', 'yes');
 add_option("adsense_made_easy_topadtype", 'banner', '', 'yes');
+add_option("adsense_made_easy_topadtextimage", 'both', '', 'yes');
 add_option("adsense_made_easy_bottomadtype", 'banner', '', 'yes');
+add_option("adsense_made_easy_bottomadtextimage", 'both', '', 'yes');
 add_option("adsense_made_easy_displayposts", 'yes', '', 'yes');
 add_option("adsense_made_easy_displaypages", 'yes', '', 'yes');
 add_option("adsense_made_easy_topadalignment", 'centered', '', 'yes');
@@ -294,17 +389,22 @@ function adsense_made_easy_page() {
 <td width="600">
 <input name="adsense_made_easy_publisherid" type="text" id="adsense_made_easy_publisherid" value="<?php echo get_option('adsense_made_easy_publisherid'); ?>" /> (For example: pub-1234567891234567 )</td>
 </tr>
-</table>
+</table><BR><BR>
 
 <table width="850">
 <tr valign="top">
 <th width="250" scope="row">Top ad type </th>
 <td width="600">
 <select name="adsense_made_easy_topadtype" id="adsense_made_easy_topadtype">
+<option value="smallsquare" <?php if (get_option('adsense_made_easy_topadtype')=='smallsquare') echo ' selected ' ?> >Small Square (200*200)</option>
 <option value="square" <?php if (get_option('adsense_made_easy_topadtype')=='square') echo ' selected ' ?> >Square (250*250)</option>
+<option value="smallrectangle" <?php if (get_option('adsense_made_easy_topadtype')=='smallrectangle') echo ' selected ' ?> >Small Rectangle (180*150)</option>
 <option value="mediumrectangle" <?php if (get_option('adsense_made_easy_topadtype')=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300*250)</option>
-<option value="rectangle" <?php if (get_option('adsense_made_easy_topadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle (336*280)</option>
+<option value="rectangle" <?php if (get_option('adsense_made_easy_topadtype')=='rectangle') echo ' selected ' ?> >Large Rectangle (336*280)</option>
+<option value="halfbanner" <?php if (get_option('adsense_made_easy_topadtype')=='halfbanner') echo ' selected ' ?> >Half Banner (234*60)</option>
 <option value="banner" <?php if (get_option('adsense_made_easy_topadtype')=='banner') echo ' selected ' ?> >Banner (468*60)</option>
+<option value="leaderboard" <?php if (get_option('adsense_made_easy_topadtype')=='leaderboard') echo ' selected ' ?> >Leaderboard (728*90)</option>
+<option value="largeleaderboard" <?php if (get_option('adsense_made_easy_topadtype')=='largeleaderboard') echo ' selected ' ?> >Large Leaderboard (970*90)</option>
 <option value="none" <?php if (get_option('adsense_made_easy_topadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
 </select> The type of ad you want on top of your posts/pages?
 </td>
@@ -326,18 +426,50 @@ function adsense_made_easy_page() {
 
 <table width="850">
 <tr valign="top">
+<th width="250" scope="row">Top ad Image or Text </th>
+<td width="600">
+<select name="adsense_made_easy_topadtextimage" id="adsense_made_easy_topadtextimage">
+<option value="text" <?php if (get_option('adsense_made_easy_topadtextimage')=='text') echo ' selected ' ?> >Text</option>
+<option value="image" <?php if (get_option('adsense_made_easy_topadtextimage')=='image') echo ' selected ' ?> >Image</option>
+<option value="both" <?php if (get_option('adsense_made_easy_topadtextimage')!='text' && get_option('adsense_made_easy_topadtextimage')!='image') echo ' selected ' ?> >Both</option>
+</select>
+</td>
+</tr>
+</table><BR><BR>
+
+<table width="850">
+<tr valign="top">
 <th width="250" scope="row">Bottom ad type </th>
 <td width="600">
 <select name="adsense_made_easy_bottomadtype" id="adsense_made_easy_bottomadtype">
+<option value="smallsquare" <?php if (get_option('adsense_made_easy_bottomadtype')=='smallsquare') echo ' selected ' ?> >Small Square (200*200)</option>
 <option value="square" <?php if (get_option('adsense_made_easy_bottomadtype')=='square') echo ' selected ' ?> >Square (250*250)</option>
+<option value="smallrectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='smallrectangle') echo ' selected ' ?> >Small Rectangle (180*150)</option>
 <option value="mediumrectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='mediumrectangle') echo ' selected ' ?> >Medium Rectangle (300*250)</option>
-<option value="rectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='rectangle') echo ' selected ' ?> >Big Rectangle (336*280)</option>
+<option value="rectangle" <?php if (get_option('adsense_made_easy_bottomadtype')=='rectangle') echo ' selected ' ?> >Large Rectangle (336*280)</option>
+<option value="halfbanner" <?php if (get_option('adsense_made_easy_bottomadtype')=='halfbanner') echo ' selected ' ?> >Half Banner (234*60)</option>
 <option value="banner" <?php if (get_option('adsense_made_easy_bottomadtype')=='banner') echo ' selected ' ?> >Banner (468*60)</option>
+<option value="leaderboard" <?php if (get_option('adsense_made_easy_bottomadtype')=='leaderboard') echo ' selected ' ?> >Leaderboard (728*90)</option>
+<option value="largeleaderboard" <?php if (get_option('adsense_made_easy_bottomadtype')=='largeleaderboard') echo ' selected ' ?> >Large Leaderboard (970*90)</option>
 <option value="none" <?php if (get_option('adsense_made_easy_bottomadtype')=='none') echo ' selected ' ?> >None (No add will be shown)</option>
 </select> The type of ad you want on the bottom of your posts/pages?
 </td>
 </tr>
 </table>
+
+<table width="850">
+<tr valign="top">
+<th width="250" scope="row">Bottom ad Image or Text </th>
+<td width="600">
+<select name="adsense_made_easy_bottomadtextimage" id="adsense_made_easy_bottomadtextimage">
+<option value="text" <?php if (get_option('adsense_made_easy_bottomadtextimage')=='text') echo ' selected ' ?> >Text</option>
+<option value="image" <?php if (get_option('adsense_made_easy_bottomadtextimage')=='image') echo ' selected ' ?> >Image</option>
+<option value="both" <?php if (get_option('adsense_made_easy_bottomadtextimage')!='text' && get_option('adsense_made_easy_bottomadtextimage')!='image') echo ' selected ' ?> >Both</option>
+</select>
+</td>
+</tr>
+</table><BR><BR>
+
 
 <table width="850">
 <tr valign="top">
@@ -402,7 +534,7 @@ function adsense_made_easy_page() {
 
 
 <input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="adsense_made_easy_publisherid, adsense_made_easy_bordercolor, adsense_made_easy_titlecolor, adsense_made_easy_backgroundcolor, adsense_made_easy_textcolor, adsense_made_easy_urlcolor, adsense_made_easy_topadtype, adsense_made_easy_bottomadtype, adsense_made_easy_displayposts, adsense_made_easy_displaypages, adsense_made_easy_topadalignment" />
+<input type="hidden" name="page_options" value="adsense_made_easy_publisherid, adsense_made_easy_bordercolor, adsense_made_easy_titlecolor, adsense_made_easy_backgroundcolor, adsense_made_easy_textcolor, adsense_made_easy_urlcolor, adsense_made_easy_topadtype, adsense_made_easy_bottomadtype, adsense_made_easy_displayposts, adsense_made_easy_displaypages, adsense_made_easy_topadalignment, adsense_made_easy_topadtextimage, adsense_made_easy_bottomadtextimage" />
 
 <p>
 <input type="submit" value="<?php _e('Save Changes') ?>" />
