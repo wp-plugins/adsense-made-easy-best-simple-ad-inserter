@@ -381,7 +381,7 @@ function adsense_made_easy_page() {
 <h2>Adsense Made Easy - Settings</h2>
 
 <p>
-Why not check out my blog: <a href"http://www.seo101.net">seo101.net</a>
+Why not check out my blog: <a href="http://www.seo101.net">seo101.net</a>
 </p>
 
 
