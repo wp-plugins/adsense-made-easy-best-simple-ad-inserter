@@ -381,7 +381,7 @@ function adsense_made_easy_page() {
 <h2>Adsense Made Easy - Settings</h2>
 
 <p>
-<strong><font size=4 color="#DF0101"> Tip: Try CTR Theme</font><strong>, the best selling Wordpress Adsense theme. With smart placement and adrotation you will increase your Adsense revenue. Must have when Adsense is your main income on your website. Link: <a href="http://69faaholmlsq3qa3whz1gemy92.hop.clickbank.net/" target="_top">Click Here!</a> - <strong><font size=4 color="#DF0101">make 10 times more with Adsense</font><strong>
+Why not check out my blog: <a href"http://www.seo101.net">seo101.net</a>
 </p>
 
 
