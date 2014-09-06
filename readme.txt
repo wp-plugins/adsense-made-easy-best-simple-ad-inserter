@@ -3,8 +3,8 @@ Contributors: seo101
 Donate link: 
 Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue, easy adsense, adsense easy, simple adsense inserter, banners
 Requires at least: 3.1
-Tested up to: 3.9.1
-Stable tag: 1.21
+Tested up to: 4.0
+Stable tag: 1.22
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,7 @@ None yet
 4. 
 
 == Changelog ==
+1.22 <BR>WP 4.0<BR>
 1.21 <BR>Update settings page<BR>
 1.20 <BR>More adtypes, and selection of if the ads are text/image or both<BR>
 1.10 <BR>Added options to the widget for the type of ad, also added adtypes in the settings page for top and bottom ads.<BR>
