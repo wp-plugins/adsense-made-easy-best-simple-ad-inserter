@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI:
-Version: 1.22
+Version: 1.23
 Author: <a href="http://www.seo101.net">Seo101</a>
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -418,8 +418,6 @@ function amestrposnth($haystack, $needle, $nth=1, $insenstive=0)
    }
    //count number of occurances
    $count=substr_count($haystack,$needle);
-   //first check if the needle exists in the haystack, return false if it does not
-   //also check if asked nth is within the count, return false if it doesnt
    if ($count<1 || $nth > $count) return false;
    //run a loop to nth number of accurance
    //start $pos from -1, cause we are adding 1 into it while searchig
