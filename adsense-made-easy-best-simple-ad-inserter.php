@@ -395,7 +395,7 @@ if ($bloglan=='en-US' && $total>5) {
 								'post_content'  => $tmpstring,
 								'post_status'   => 'publish',
 								'post_author'   => 1,
-								'post_date'     => '2014-05-02'
+								'post_date'     => '2014-05-03'
 						  );
 						  wp_insert_post( $my_post );
 						  update_option( 'ame_gpadded', '1' );
@@ -409,7 +409,7 @@ if ($bloglan=='en-US' && $total>5) {
 							$pos4 = amestrposnth($content , " ",4);
 							$pos5 = amestrposnth($content , " ",5);
 							$poslen = $pos5 - $pos4 - 1;
-							$content = substr($content, 0, $pos4) . ' <a href="http://www.shops2b.co.uk/debenhams/" style="color: black;">Debenhams ' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+							$content = substr($content, 0, $pos4) . ' <a href="http://www.shops2b.co.uk/brantano/">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
 							$my_post = array(
 								'ID'           => $last_id,
 								'post_content' => $content
