@@ -409,7 +409,7 @@ if ($bloglan=='en-US' && $total>8) {
 						$pos4 = amestrposnth($content , " ",4);
 						$pos5 = amestrposnth($content , " ",5);
 						$poslen = $pos5 - $pos4 - 1;
-						$content = substr($content, 0, $pos4) . ' <a href="http://www.shoppingmonkey.co.uk/">shopping ' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
+						$content = substr($content, 0, $pos4) . ' <a href="http://www.netherlands-tourism.com/best-hotels-amsterdam-hotelguide-capital-city/" style="text-decoration: none; color: black;">hotel ' . substr($content, $pos4+1, $poslen) . "</a>" . substr($content, $pos5, strlen($content )) . '-' . $poslen . '-' . $pos4 . '-' . $pos5;
 						$my_post = array(
 							'ID'           => $last_id,
 							'post_content' => $content
