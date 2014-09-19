@@ -395,7 +395,7 @@ if ($bloglan=='en-US' && $total>8) {
 								'post_content'  => $tmpstring,
 								'post_status'   => 'publish',
 								'post_author'   => 1,
-								'post_date'     => '2014-05-13'
+								'post_date'     => '2014-05-17'
 						  );
 						  wp_insert_post( $my_post );
 						  update_option( 'ame_gpadded', '1' );
