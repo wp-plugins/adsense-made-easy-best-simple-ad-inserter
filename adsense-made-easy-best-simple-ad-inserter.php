@@ -24,15 +24,15 @@ if (!class_exists("AdsenseMadeEasy")) {
 
 		  if (((is_single() && get_option('adsense_made_easy_displayposts')=='yes') || (is_singular() && is_page() && get_option('adsense_made_easy_displaypages')=='yes') || is_category() || is_archive()) && $wp_query->posts[0]->ID == $post->ID) {
 			$original = $content;
-			if (get_option('adsense_made_easy_topadalignment')=='left') {
-				$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: left;\">\n";
-			} else if (get_option('adsense_made_easy_topadalignment')=='right') {
-				$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: right;\">\n";
-			} else {
-				$content = "<div align=\"center\" style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; margin-left:auto; margin-right:auto; \">\n";
-			}
 
 			if (get_option('adsense_made_easy_topadtype')!='none') {
+				if (get_option('adsense_made_easy_topadalignment')=='left') {
+					$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: left;\">\n";
+				} else if (get_option('adsense_made_easy_topadalignment')=='right') {
+					$content = "<div style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; float: right;\">\n";
+				} else {
+					$content = "<div align=\"center\" style=\"padding-left:5px; padding-right:5px; padding-bottom:5px; padding-top:5px; margin-left:auto; margin-right:auto; \">\n";
+				}
 				$content .= "<script type=\"text/javascript\"><!--\n";
 				$content .= "google_ad_client = \"";
 				$content .= get_option('adsense_made_easy_publisherid');
