@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI:
-Version: 1.23
+Version: 1.24
 Author: <a href="http://www.seo101.net">Seo101</a>
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -383,9 +383,9 @@ function adsense_made_easy_page() {
 <h2>Adsense Made Easy - Settings</h2>
 
 <p>
-Why not check out my blog: <a href="http://www.seo101.net">seo101.net</a>
+<font color="red">Check out the <b>PRO</b> version:</font> <a href="http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/">Pro Version</a>
 </p>
-
+<BR>
 
 <form method="post" action="options.php">
 <?php wp_nonce_field('update-options'); ?>
