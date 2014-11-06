@@ -98,9 +98,9 @@ if (!class_exists("AdsenseMadeEasy")) {
 				$content .= "<script type=\"text/javascript\"\n";
 				$content .= "src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\n";
 				$content .= "</script>\n";
+				$content .= "</div>\n";
+				$content .= $original;
 			}
-			$content .= "</div>\n";
-			$content .= $original;
 
 			if (get_option('adsense_made_easy_bottomadtype')!='none') {
 				$content .= "<center> <script type=\"text/javascript\"><!--\n";
@@ -384,6 +384,9 @@ function adsense_made_easy_page() {
 
 <p>
 <font color="red">Check out the <b>PRO</b> version:</font> <a href="http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/">Pro Version</a>
+</p>
+<p>
+Currently I'm making my living on several websites that I operate (I use Adsense Made Easy to monetize them). If you'd like to learn more about how you too can make a living online I highly recommend reading <A href="http://www.seo101.net/go/millionairesbrain/">The Millionaire's Brain</a>
 </p>
 <BR>
 
