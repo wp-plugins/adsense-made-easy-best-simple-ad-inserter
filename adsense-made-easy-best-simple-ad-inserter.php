@@ -542,9 +542,6 @@ function adsense_made_easy_page() {
 <p>
 Why not check out my blog: <a href="http://www.seo101.net">seo101.net</a>
 </p>
-<p>
-Currently I'm making my living on several websites that I operate (I use Adsense Made Easy to monetize them). If you'd like to learn more about how you too can make a living online I highly recommend reading <A href="http://www.seo101.net/go/millionairesbrain/">The Millionaire's Brain</a>
-</p>
 <BR>
 
 
