@@ -18,21 +18,6 @@ If you'd like to change where the ads appear you can specify the type of ad and 
 
 More information: <a href="http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/">http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/</a>
 
-<p>
-<font color="red">You can buy the Pro version here:</font> <a href="http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/">Pro Version</a>
-</p>
-The Pro version features:
-<ul>
-<li>Be able to add a horizontal link unit before your content</li>
-<li>Be able to add a horizontal link unit after your content</li>
-<li>The widget allows for 6 link units as well</li>
-<li>Be able to disable ads on a post or page (setting on the edit screen of the post/page)</li>
-<li>Takes the settings you currently have set in the free plugin</li>
-<li>Get support</li>
-</ul>
-<BR>
-
-
 Features: Google ADSENSE, Adsense Ads, Easy Adsense, Adsense Easy, Adsense Made Easy, Simple Adsense, Simple Adsense Inserter, Inserting Ads, Google Adsense Plugin, Adsense Plugin, Plugin for ADSENSE, Adsense Now, Now Adsense, Google Adsense Now, Simple Adsense Insertion, Inserting code, Adsense Widget, Widget for Google Adsense, Quick Adsense, Ad Injection, Adsense Now, Adsense Insertion
 
 == Installation ==
