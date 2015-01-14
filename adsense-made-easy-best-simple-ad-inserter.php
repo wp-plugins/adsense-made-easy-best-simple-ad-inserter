@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI:
-Version: 1.25
+Version: 1.26
 Author: <a href="http://www.seo101.net">Seo101</a>
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -255,6 +255,7 @@ class AdsenseMadeEasyWidget extends WP_Widget
     $title = $instance['title'];
     $adtype = $instance['adtype'];
     $adtextimage = $instance['adtextimage'];
+    $adalignment = $instance['adalignment'];
 ?>
   <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
 <p>Type of Ad:<BR>
@@ -284,8 +285,14 @@ Image or Text Ads?:<BR>
 <option value="image" <?php if (attribute_escape($adtextimage)=='image') echo ' selected ' ?> >Image</option>
 <option value="both" <?php if (attribute_escape($adtextimage)!='image' && attribute_escape($adtextimage)!='text') echo ' selected ' ?> >Both</option>
 </select>
-
-
+</p>
+<p>
+Alignment of the Ad?:<BR>
+<select name="<?php echo $this->get_field_name('adalignment'); ?>" id="<?php echo $this->get_field_id('adalignment'); ?>">
+<option value="left" <?php if (attribute_escape($adalignment)=='left') echo ' selected ' ?> >Left</option>
+<option value="right" <?php if (attribute_escape($adalignment)=='right') echo ' selected ' ?> >Right</option>
+<option value="center" <?php if (attribute_escape($adalignment)!='left' && attribute_escape($adalignment)!='right') echo ' selected ' ?> >Center</option>
+</select>
 </p>
 <?php
   }
@@ -296,6 +303,7 @@ Image or Text Ads?:<BR>
     $instance['title'] = $new_instance['title'];
     $instance['adtype'] = $new_instance['adtype'];
     $instance['adtextimage'] = $new_instance['adtextimage'];
+    $instance['adalignment'] = $new_instance['adalignment'];
     return $instance;
   }
 
@@ -311,11 +319,22 @@ if( empty( $meta_value ) ) {
     $title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);
     $adtype = $instance['adtype'];
     $adtextimage = $instance['adtextimage'];
+    $adalignment = $instance['adalignment'];
 
     if (!empty($title))
       echo $before_title . $title . $after_title;;
 
     // WIDGET CODE GOES IN HERE
+	if ($adalignment=='center') {
+		echo "<center>";
+	}
+	if ($adalignment=='left') {
+		echo "<div align=\"left\">";
+	}
+	if ($adalignment=='right') {
+		echo "<div align=\"right\">";
+	}
+
     echo "<script type=\"text/javascript\"> <!--\n";
     echo "google_ad_client = \"";
 	echo get_option('adsense_made_easy_publisherid');
@@ -406,6 +425,16 @@ if( empty( $meta_value ) ) {
     echo "<script type=\"text/javascript\"\n";
     echo "src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\n";
     echo "</script>\n";
+	if ($adalignment=='center') {
+		echo "</center>";
+	}
+	if ($adalignment=='left') {
+		echo "</div>";
+	}
+	if ($adalignment=='right') {
+		echo "</div>";
+	}
+
     echo $after_widget;
   }
 }

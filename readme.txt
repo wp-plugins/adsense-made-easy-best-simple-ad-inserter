@@ -4,7 +4,7 @@ Donate link:
 Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue, easy adsense, adsense easy, simple adsense inserter, banners
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 1.25
+Stable tag: 1.26
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,7 @@ None yet
 4. 
 
 == Changelog ==
+1.26 <BR>You can now adjust the alignment of the Ads in the Widget<BR>
 1.25 <BR>Added linkunits, link blocks in widget and you can turn off ads on each seperate post and page!<BR>
 1.22 <BR>WP 4.0<BR>
 1.21 <BR>Update settings page<BR>
