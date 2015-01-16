@@ -4,7 +4,7 @@ Donate link:
 Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue, easy adsense, adsense easy, simple adsense inserter, banners
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 1.26
+Stable tag: 1.27
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,21 @@ ADSENSE Made Easy is designed to keep everything as simple as possible. In fact 
 If you'd like to change where the ads appear you can specify the type of ad and the location of the ad by simple parameters in the settings page. You can even change the appearance by changing background and border colors to match the look and feel of your website.
 
 More information: <a href="http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/">http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/</a>
+
+TIP: I have a <b>FREE</b> Pro version for subscribers of my mailing list.
+
+These are the extra features of the PRO plugin:
+<ul>
+	<li>Insert Ads into the middle of your content</li>
+	<li>Ability to use your own custom Adsense code (copy/paste) on top, bottom and middle ad</li>
+	<li>Custom Adsense Code in the Widget</li>
+	<li>Choose after which paragraph number you wish to insert the ad</li>
+	<li>Set a minimum Word Count to be reached before an ad is inserted in the middle of your content</li>
+	<li>Disable Ads on each individual Post &amp; Page just like the free version</li>
+	<li>Comment on this page to request new features:)</li>
+</ul>
+
+Find it here: <a href="http://www.seo101.net/adsense-made-easy-pro/">Adsense Made Easy Pro Version</a>
 
 Features: Google ADSENSE, Adsense Ads, Easy Adsense, Adsense Easy, Adsense Made Easy, Simple Adsense, Simple Adsense Inserter, Inserting Ads, Google Adsense Plugin, Adsense Plugin, Plugin for ADSENSE, Adsense Now, Now Adsense, Google Adsense Now, Simple Adsense Insertion, Inserting code, Adsense Widget, Widget for Google Adsense, Quick Adsense, Ad Injection, Adsense Now, Adsense Insertion
 
