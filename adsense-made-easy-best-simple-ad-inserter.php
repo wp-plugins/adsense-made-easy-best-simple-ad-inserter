@@ -4,7 +4,7 @@ Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI:
 Version: 1.27
 Author: <a href="http://www.seo101.net">Seo101</a>
-Description: Easily add Google Adsense to your posts, pages and sidebar
+Description: Easily add Google Adsense ads to your posts, pages and sidebar
 License: GPLv2 a
 
 */
