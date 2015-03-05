@@ -18,7 +18,7 @@ If you'd like to change where the ads appear you can specify the type of ad and 
 
 More information: <a href="http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/">http://www.seo101.net/adsense-made-easy-best-simple-ad-inserter/</a>
 
-TIP: I have a <b>FREE</b> Pro version for subscribers of my mailing list.
+TIP: I have a <b>FREE</b> Pro version for subscribers of my mailing list
 
 These are the extra features of the PRO plugin:
 <ul>
