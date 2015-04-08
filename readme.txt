@@ -4,7 +4,7 @@ Donate link:
 Tags: adsense, google adsense, ads, ad insertion, advertising, money, revenue, easy adsense, adsense easy, simple adsense inserter, banners
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 1.31
+Stable tag: 1.32
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,7 @@ None yet
 4. 
 
 == Changelog ==
+1.32 <BR>Fix 404<BR>
 1.31 <BR>Fix middle ad<BR>
 1.30 <BR>Support for custom Adsense code, insert into middle of post, minimum word count, disable ads<BR>
 1.26 <BR>You can now adjust the alignment of the Ads in the Widget<BR>

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI: http://www.seo101.net
-Version: 1.31
+Version: 1.32
 Author: Seo101
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -855,7 +855,7 @@ Copy and Paste your Adsense Code here, don't forget your ad type must be set to 
 <td width="600">
 <textarea name="adsense_made_easy_middlecustomcode" id="adsense_made_easy_middlecustomcode" style="width:340px; height:220px; font-size:11px;" cols="" rows=""><?php echo get_option('adsense_made_easy_middlecustomcode'); ?></textarea>
 <BR>
-Copy and Paste your Adsense Code here, don't forget your middle ad type must be set to Custom Code.
+Copy and Paste your Adsense Code here, don't forget your middle ad type must be set to Custom Code to work.
 </td>
 </tr>
 </table>
