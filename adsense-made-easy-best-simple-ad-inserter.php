@@ -26,10 +26,10 @@ if (!class_exists("AdsenseMadeEasy")) {
 			$original = $content;
 			// Retrieves the stored value from the database
 			$meta_value = get_post_meta( get_the_ID(), 'meta-checkbox', true );
-			// Checks the retrieved value (should be empty if we want to display it)
+			// Checks the retrieved value  (should be empty if we want to display it)
 			if( empty( $meta_value ) ) {
 				$content = "";
-				$btt= false;
+				$btt = false;
 				if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
 					$btt = true;
 				}
